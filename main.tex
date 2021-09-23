@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{CoppeliaSim}
+\author{Ruiming Guo}
+\date{\today}
+
+\usepackage{listings}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The robot simulator, CoppeliaSim, is an integrated robot developing environment, with physical simulation, scripting robot control and a friendly user interface.
+
+The main scene and each of the robots can be controlled by scripts.
+
+In this project, we use CoppeliaSim to simulate the Fully Automated Garbage Sorting System (FAGSS).
+
+The CoppeliaSim lib is released under GNU GPL, while other accompanying codes that have other open-source or proprietary licenses. 
+
+CoppeliaSim can be used as a stand-alone application or can easily be embedded into a main client application. But as for now, we'll just use it as it is.
+
+\section{scripts}
+
+The main thing we care about, which is also why CoppeliaSim so famous, is its scripting capblility. 
+
+\emph{Simulation Scripts} plays the central role in a simulation. There are two types of Simulation Scripts: the \emph{main script}, and the \emph{child script}.
+
+\subsection{The main script}
+
+By default, each scene in CoppeliaSim will have one main script, which contains the basic code that allows a simulation to run.
+
+The main script is a collection of \emph{callback functions}. Among all these callbacks, \txttt{sysCall_init} is mandate, while others are optional.
+
+But most of the time we needn't, and shouldn't modify this script.
+
+Most of child's script's system callback functions are called from the main script, which operates in a cascading fashion upon the scene hierarchy and the child scripts attached to individual scene object.
+
+\end{document}
